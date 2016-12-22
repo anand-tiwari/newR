@@ -1,0 +1,28 @@
+<div style="margin-top:83px;">
+</div>
+<div class="container valign" id="table" ng-cloak ng-init="init()">             
+    <div class="row">       
+        <div class="col m2 card" id="nav">
+            <div id="nav-header">
+                <i class="material-icons">library_books</i> Reports
+            </div>
+            <div id="table-list">
+                <ul class="collapsible" data-collapsible="accordion">
+                    <li ng-repeat="file in tablefiles">
+                        <div class="collapsible-header" tooltipped data-position="right" data-delay="50" 
+                                data-tooltip="{{file.name}}" ng-class="{active: file.name == activeMenu}">
+                            <div class="fileName" ng-click="fetch(file.name)">
+                                <i class="material-icons">keyboard_arrow_right</i>{{file.name}}
+                            </div>
+                            <div class="downloader">
+                                <i class="material-icons" ng-click="download(file.name,$event)">get_app</i>
+                            </div>
+                        </div>
+                    </li>                   
+                </ul>
+            </div>
+        </div>
+        <div class="col m9 card" id="table-container" ng-bind-html="tableData">
+        </div>
+    </div>  
+</div>

@@ -1,0 +1,33 @@
+{
+  "name": "ikya",
+  "private": true,
+  "version": "0.1.0",
+  "description": "ikya custom dashboard powered by NANOBI",
+  "main": "app.js",
+  "author": "Anand Tiwari <anand.tiwari@nanobianalytics.com>",
+  "contributors": [
+    {
+      "name": "Ashish Mishra",
+      "email": "ashish.mishra@nanobianalytics.com"
+    },
+    {
+      "name": "Anand Tiwari",
+      "email": "anand.tiwari@nanobianalytics.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanobianalytics/CUSTOMERASSETS.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "homepage": "https://github.com/nanobianalytics/CUSTOMERASSETS/blob/ikya#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  }
+}

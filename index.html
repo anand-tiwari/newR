@@ -1,0 +1,158 @@
+<!doctype html>
+<html ng-app="ikya">
+  <head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Custom Dashboard">
+    <meta name="author" content="Ashish Mishra <ashish.mishra@nanobianalytics.com>">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <title ng-bind="'Nanobi Analytics &mdash; ' + title">Nanobi Analytics</title>
+
+    <!-- bower:css -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="libs/bootstrap-material-design/dist/css/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="libs/bootstrap-material-design/dist/css/ripples.min.css">
+    <link rel="stylesheet" type="text/css" href="libs/components-font-awesome/css/font-awesome.min.css">
+    <!-- endbower -->
+    <link rel="stylesheet" type="text/css" href="libs/Materialize/dist/css/materialize.min.css">
+
+    <link rel="stylesheet" href="plugins/jqrangeslider/css/iThing-min.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" href="app/styles/components.css" />
+
+  </head>
+    <body ng-controller="AuthCtrl">
+
+    <header>
+      <nav style="position:fixed;top:0px;left:0px;z-index:999">
+        <div style="margin-left:15%">
+          <div class="nav-wrapper">
+            <a id="logo" style="font-weight: 400;" href="http://www.nanobi.in/" class="brand-logo">NanoBi</a>
+            <form id="myForm" ng-if="isAuthenticated=='login' ">
+               <div class="row right" style="width: 100%">
+                    <div class="input col m3">
+                        <input id="email" ng-model="userName" type="email" class="validate" placeholder="User Name">
+                    </div>
+                    <div class="input col m3">
+                        <input class="password" ng-model="passWord" type="password" placeholder="Password">
+                    </div>
+                    <button ng-click="login()" class="white black-text col btn secondary-content waves-effect" style="margin:1.8% 0px 0px 8px">Submit</button>
+                </div>
+            </form>
+            <div ng-if="isAuthenticated != 'login' " class="row right" style="width=100%">
+                <button class="col m12 btn waves-effect waves-light white black-text"
+                            ng-click="logout()">Logout
+                </button>
+            </div>
+
+            <ul class="right side-nav" id="nav-mobile" style="transform: translateX(-100%);">
+              <li class="hide-on-small-only"><a href="parallax.html"><i class="mdi-navigation-arrow-back"></i></a></li>
+            </ul>
+            <a class="button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-menu"></i></a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <ui-view></ui-view>
+
+     <footer class="page-footer">
+      <div>
+        <div class="row">
+          <div ng-if="!showLinks"  class="col offset-m1 m5">
+            <h5 class="white-text">NanoBi </h5>
+            <p class="grey-text text-lighten-4">Analytics Delivered Simple, Agile, Pervasive......</p>
+          </div>
+
+          <div ng-if="showLinks" class="col offset-m1 m5">
+            <h5 class="white-text">Links</h5>
+            <ul style="display:inline-block;margin-right: 5%">
+              <li><a class="grey-text text-lighten-3" href="http://www.nanobi.in" target="_blank">Nanobi Home</a></li>
+              <li><a class="grey-text text-lighten-3" href="http://www.nanobi.in/partners.html/" target="_blank">The Sparrow Club</a></li>
+              <li><a class="grey-text text-lighten-3" href="http://www.theanalyticstree.com" target="_blank">The Analytics Tree</a></li>
+            </ul>
+            <ul style="display:inline-block;margin-right: 5%">
+              <li><a class="grey-text text-lighten-3" href="http://nanobiblog.nanobianalytics.com" target="_blank">Blog</a></li>
+              <li><a class="grey-text text-lighten-3" href="http://www.nanobi.in/privacy.html/" target="_blank">Privacy Policy</a></li>
+              <li><a class="grey-text text-lighten-3" href="http://www.nanobi.in/copyright.html/" target="_blank">Copyright Information</a></li>
+             </ul>
+
+            <ul style="display:inline-block;margin-right: 5%">
+              <li><a class="grey-text text-lighten-3" href="http://www.nanobi.in/media.html/" target="_blank">Media</a></li>
+              <li><a class="grey-text text-lighten-3" href="http://www.nanobi.in/careers.html/" target="_blank">Careers</a></li>
+              <li><a class="grey-text text-lighten-3" href="http://www.nanobi.in/contact.html/" target="_blank">Contact us</a></li>
+            </ul>
+          </div>
+
+          <div class="col offset-m2 m4">
+            <span class="white-text">
+            <h5 class="white-text">Contacts</h5>
+                <p>
+                    <i class="fa fa-phone"></i> Telephone : + 91 080-677 39926 
+                </p>
+                <p>
+                    <i class="fa fa-envelope-o"></i> email : info@nanobianalytics.com
+                </p>
+            </span>
+          </div>
+
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        Copyright © 2012-2015 nanobi data and analytics pvt ltd | all rights reserved
+        <a ng-if="!showLinks" class="grey-text text-lighten-4 right" ng-click="toggleLinks()" href="">More Links</a>
+        <a ng-if="showLinks" class="grey-text text-lighten-4 right" ng-click="toggleLinks()" href="">Back</a>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- bower:js -->
+    <script src="libs/jquery/dist/jquery.js"></script>
+    <script src="libs/jquery-ui/jquery-ui.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="libs/bootstrap-material-design/dist/js/material.min.js"></script>
+    <script src="libs/bootstrap-material-design/dist/js/ripples.min.js"></script>
+    <script src="libs/angular/angular.js"></script>
+    <script src="libs/angular-cookies/angular-cookies.js"></script>
+    <script src="libs/angular-route/angular-route.js"></script>
+    <script src="libs/angular-ui-router/release/angular-ui-router.js"></script>
+ 
+    <script src="libs/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="libs/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="libs/Materialize/dist/js/materialize.min.js"></script>
+    <!-- endbower -->
+
+    <script src="plugins/x2js/xml2json.js"></script>
+    <script src="plugins/jqrangeslider/jQAllRangeSliders-min.js"></script>
+
+    <script src="plugins/x2js/xml2json.js"></script>
+    <!-- UX scripts -->
+    <!-- UX scripts -->    
+    <script src="app/scripts/shared/app.js"></script>
+    <script src="app/scripts/shared/router.js"></script>
+    <script src="app/scripts/shared/services.js"></script>
+    <script src="app/scripts/shared/directives.js"></script>
+    <script src="app/scripts/shared/controllers.js"></script>
+
+    <script src="app/scripts/config/appConfig.js"></script>
+    <script src="app/scripts/config/appProperties.js"></script>
+
+    <script src="app/scripts/controllers/main.ctrl.js"></script>
+    <script src="app/scripts/controllers/auth.ctrl.js"></script>
+    <script src="app/scripts/controllers/view.ctrl.js"></script>
+
+    <script src="app/scripts/services/auth.service.js"></script>
+    <script src="app/scripts/services/view.service.js"></script>
+
+    <script>
+    $(document).ready(function () {
+        $('.parallax').parallax();
+    });
+</script>
+  </body>
+</html>

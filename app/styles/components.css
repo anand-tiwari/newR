@@ -1,0 +1,321 @@
+
+/*Materialize css*/
+ .parallax-container {
+      height: 400px;
+    }
+
+footer.page-footer{
+    margin: 0px !important;
+}
+
+#myForm{
+    float: right;
+    margin-right:-25%;
+    display: inline-block;
+    width: 70%;
+}
+a#logo:hover{
+  text-decoration: none;
+}
+/*Materialze css END*/
+
+body{
+  background-image: url("../images/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  overflow-y:auto;
+  /*height:100vh;*/
+}
+
+#myView{
+  height:100vh; 
+}
+
+
+
+/*.page-footer{
+  display: block;
+  padding-top: 0px !important;
+  width: 100% !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  background-color: rgba(0, 0, 0, 0.8) !important; 
+}*/
+
+/*-----------------Login---------------*/
+
+/*#login{
+  background-color:rgba(0, 0, 0, 0.5) !important; 
+}
+
+#login .input-field{
+  width: 80%;
+}
+
+#login button, #login a, #login .input-field{
+  display: block;
+  margin: 2% auto;
+}*/
+
+/*-----------------Logout---------------*/
+
+/*#main .modal-footer button{
+  margin-right:2%;
+}
+
+#main #logoutBtn{
+  position:fixed;
+  right:1%;
+  top:1%;
+}
+
+#logoutModal{
+  background-color:rgba(0, 0, 0, 0.5);
+}
+#logoutModal .modal-footer{
+  background-color: initial;
+}*/
+
+/*-----------------Choice---------------*/
+/*
+#choice{
+  height:100vh;
+  margin-top:30%;
+}
+
+#choice .card{
+  background-color:rgba(255, 255, 255, 0.5) !important; 
+}
+
+.activeTab{
+  opacity: 0.5;
+}
+*/
+
+/*-----------------Bank---------------*/
+/*
+#bank.row{
+  padding-bottom: 2%
+}
+*/
+/*-----------------NHB---------------*/
+/*
+#nhb.row{
+  padding-bottom: 2%
+}
+
+#sliderContainer{
+  margin-bottom: 2%;
+}*/
+
+/*-----------------TABLE---------------*/
+
+#table i.report{
+  font-size: large;
+  vertical-align: text-bottom;
+}
+
+#table.container{
+  width: 100vw;
+  max-width: 100vw; 
+}
+
+#table>.row{
+  margin-bottom: 0px !important;
+}
+
+#table .col{
+  padding-right: 0px !important;
+  margin: 0px;
+}
+
+#table #nav{
+  background-color: #2e353d;
+  height:82vh;
+}
+
+#nav-header i{
+  vertical-align: text-bottom;
+}
+
+#nav-header{
+  color: #e1ffff;
+  font-size: large;
+  padding-left: 10%;
+  background-color: #23282e;
+  line-height: 8vh;
+}
+
+#table .collapsible{
+  margin-top: 0px !important;
+  border: none;
+  height: 574px;
+  overflow: auto;
+}
+
+#table .collapsible-header.active, #table .collapsible-header:hover{
+  border-left: 3px solid #d19b3d;
+    background-color: #4f5b69;
+} 
+
+#table .collapsible-body li:hover{
+  transition: all 0.2s linear;
+  border-left: 3px solid #D13D3D;
+  background-color: #100F0F;
+}
+
+.active-report{
+  border-left: 3px solid #D13D3D !important;
+  background-color: #100F0F !important;
+}
+
+#table .collapsible-header{
+  transition: all 0.2s linear;
+  height: 40px;
+  background-color: #2e353d;
+  border-left: 3px solid #2e353d;
+  border-bottom: 1px solid #23282e !important;
+  color: #e1ffff;
+  padding-right: 2%;
+}
+  
+#table .collapsible-header .fileName{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 80%; 
+  display: inline-block;
+}
+
+#table .collapsible-header .downloader{
+  display: inline-block;
+  width: 10%;
+  color: white;
+}
+
+#table .collapsible-body{
+  border-bottom: none;
+  background-color: #181c20;
+  color: #e1ffff;
+}
+
+#table .collection li{  
+  background-color: #181c20;
+  border-left: 3px solid #181c20;
+  border-bottom: 1px solid #23282e;
+  color: #e1ffff;
+  font-size: small; 
+}
+
+#table-container{
+  height: 82vh;
+  margin: 0px !important;
+  /*overflow: hidden;*/
+  overflow: auto;
+  margin-left: 4% !important;
+}
+
+#table th,#table td{
+  border: 1px solid gray;
+  padding: 2px;
+}
+
+.active{
+  background: #00a1ff !important;
+}
+
+/*-----------------Preloader---------------*/
+/*.loader-container{
+  width:100vw;
+  height:100vh;
+  position:absolute;
+  left:0;
+  top:0;
+  background-color: rgba(78, 78, 78, 0.75);
+  z-index:999;
+}
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.loading-bar {
+  display: inline-block;
+  width: 4px;
+  height: 18px;
+  border-radius: 4px;
+  animation: loading 1s ease-in-out infinite;
+}
+.loading-bar:nth-child(1) {
+  background-color: #3498db;
+  animation-delay: 0;
+}
+.loading-bar:nth-child(2) {
+  background-color: #c0392b;
+  animation-delay: 0.09s;
+}
+.loading-bar:nth-child(3) {
+  background-color: #f1c40f;
+  animation-delay: .18s;
+}
+.loading-bar:nth-child(4) {
+  background-color: #27ae60;
+  animation-delay: .27s;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1, 2.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+}*/
+/*-----------------------Animation View--------------------------*/
+
+#choiceView.ng-enter {
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -ms-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+#choiceView.ng-leave {
+  -webkit-animation: zoomOut 1s;
+  -moz-animation: zoomOut 1s;
+  -ms-animation: zoomOut 1s;
+  animation: zoomOut 1s;
+}
+
+
+#myView.ng-leave {
+  -webkit-animation: fadeOutUp 1s;
+  -moz-animation: fadeOutUp 1s;
+  -ms-animation: fadeOutUp 1s;
+  animation: fadeOutUp 1s;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-button {
+  width: 8px;
+  height:5px;
+}
+::-webkit-scrollbar-track {
+  background:#eee;
+  box-shadow: 0px 0px 3px #dfdfdf inset;
+  border-radius:10px;
+}
+::-webkit-scrollbar-thumb {
+  background:#999;
+  border: thin solid gray;
+  border-radius:10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background:#7d7d7d;
+}     
+
